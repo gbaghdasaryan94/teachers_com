@@ -1,2 +1,2 @@
 EMAIL = 'garnik@instigatemobile.com'
-PASSWORD = 'Tester1'
+PASSWORD = 'TesterԹ1'

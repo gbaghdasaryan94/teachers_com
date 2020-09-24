@@ -1,3 +1,4 @@
+import os
 import unittest
 from base.driver import Driver
 
@@ -7,7 +8,7 @@ class BaseTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = Driver.create('chrome')
+        cls.driver = Driver.create(os.environ["BROWSER"])
 
     @classmethod
     def tearDownClass(cls):

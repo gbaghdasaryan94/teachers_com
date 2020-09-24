@@ -12,6 +12,7 @@ class TestLoginPage(BaseTest):
     def setUpClass(cls):
         super().setUpClass()
         cls.loginPage = Login(cls.driver).get()
+        cls.loginPage.make_login()
 
 
     def test_check_login_functionality(self):

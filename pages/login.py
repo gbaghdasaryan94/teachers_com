@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from elementium.drivers.se import SeElements
 
+
 from base.base_page import BasePage
 from constants.locators.login_locators import *
 from utils.helper import *
@@ -22,27 +23,30 @@ class Login(BasePage):
 
     def isLoaded(self):
         try:
-            assert self.se.find(NEXT_BUTTON).is_displayed()
+            assert self.se.find(NEXT_BUTTON, wait=True).is_displayed()
         except wrapping_exceptions():
             raise Error("Page is not loaded properly")
 
     def get_next_button(self):
-        return self.se.find(NEXT_BUTTON)
+        return self.se.find(NEXT_BUTTON, wait=True)
 
     def get_email_field(self):
-        return self.se.find(EMAIL_FIELD)
+        return self.se.find(EMAIL_FIELD, wait=True)
+
+    # def send_enter(self):
+    #     return self.get_email_field().write(Keys.ENTER)
 
     def type_email(self):
         self.get_email_field().write(EMAIL)
 
     def get_password_field(self):
-        return self.se.find(PASSWORD_FIELD)
+        return self.se.find(PASSWORD_FIELD, wait=True)
 
     def type_password(self):
         self.get_password_field().write(PASSWORD)
 
     def get_login_button(self):
-        return self.se.find(LOGIN_BUTTON)
+        return self.se.find(LOGIN_BUTTON, wait=True)
 
     def click_next_button(self):
         self.get_next_button().click()
@@ -55,3 +59,4 @@ class Login(BasePage):
         self.click_next_button()
         self.type_password()
         self.click_login_button()
+
