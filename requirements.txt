@@ -5,6 +5,5 @@ webdriver-manager==3.2.1
 pytest-xdist==1.32.0
 elementium==2.0.2
 pytest==5.4.3
-# unittest
 pytest-html==2.1.1
 delayed-assert==0.3.2

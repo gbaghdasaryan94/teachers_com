@@ -2,10 +2,12 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from elementium.drivers.se import SeElements
+import time
 
 
 from base.base_page import BasePage
 from constants.locators.login_locators import *
+from constants.locators.home_page_locators import *
 from utils.helper import *
 from constants.general_constants import *
 
@@ -33,20 +35,20 @@ class Login(BasePage):
     def get_email_field(self):
         return self.se.find(EMAIL_FIELD, wait=True)
 
-    # def send_enter(self):
-    #     return self.get_email_field().write(Keys.ENTER)
-
     def type_email(self):
         self.get_email_field().write(EMAIL)
 
     def get_password_field(self):
         return self.se.find(PASSWORD_FIELD, wait=True)
 
+    def get_welcome_text(self):
+        return self.se.find(WELCOME_TEXT, wait=True)
+
     def type_password(self):
         self.get_password_field().write(PASSWORD)
 
     def get_login_button(self):
-        return self.se.find(LOGIN_BUTTON, wait=True)
+        return self.se.find(LOGIN_BUTTON, wait=True, ttl=3600)
 
     def click_next_button(self):
         self.get_next_button().click()
@@ -59,4 +61,4 @@ class Login(BasePage):
         self.click_next_button()
         self.type_password()
         self.click_login_button()
-
+        self.get_welcome_text()

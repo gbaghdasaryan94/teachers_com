@@ -1,0 +1,1 @@
+WELCOME_TEXT = '[class=\'font-normal leading-tight text-gray-900\']'
