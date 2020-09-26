@@ -1,6 +1,5 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from elementium.drivers.se import SeElements
 import time
 

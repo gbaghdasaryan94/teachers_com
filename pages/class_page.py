@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from elementium.drivers.se import SeElements
-
+from selenium.webdriver.common.keys import Keys
 
 from base.base_page import BasePage
 from constants.locators.class_page_locators import *
@@ -25,43 +25,61 @@ class ClassMenu(BasePage):
             raise Error("Page is not loaded properly")
 
     def get_create_class_button(self):
-        return self.se.find(CREATE_A_NEW_CLASS, wait=True)
+        return self.se.find_with_wait(CREATE_A_NEW_CLASS)
 
     def get_add_class_window(self):
-        return self.se.find(ADD_CLASS_WINDOW, wait=True)
+        return self.se.find_with_wait(ADD_CLASS_WINDOW)
 
     def get_class_name(self):
-        return self.se.find(CLASS_NAME_FIELD, wait=True)
+        return self.se.find_with_wait(CLASS_NAME_FIELD)
 
     def get_grade(self):
-        return self.se.find(GRADE, wait=True)
+        return self.se.find_with_wait(GRADE)
 
     def get_period(self):
-        return self.se.find(PERIOD, wait=True)
+        return self.se.find_with_wait(PERIOD)
 
     def get_curriculum(self):
-        return self.se.find(CURRICULUM, wait=True)
+        return self.se.find_with_wait(CURRICULUM)
 
     def get_language(self):
-        return self.se.find(LANGUAGE, wait=True)
+        return self.se.find_with_wait(LANGUAGE)
 
     def get_status(self):
-        return self.se.find(STATUS,wait=True)
+        return self.se.find_with_wait(STATUS)
 
     def get_create_class_on_modal(self):
-        return self.se.find(CREATE_CLASS_ON_MODAL, wait=True)
+        return self.se.find_with_wait(CREATE_CLASS_ON_MODAL)
 
     def get_nice_work_text(self):
-        return self.se.find(NICE_WORK, wait=True)
+        return self.se.find_with_wait(NICE_WORK, ttl=10)
 
     def get_no_thanks(self):
-        return self.se.find(NO_THANKS, wait=True)
+        return self.se.find_with_wait(NO_THANKS)
 
     def get_class_table(self):
-        return self.se.find(CLASS_TABLE, wait=True)
+        return self.se.find_with_wait(CLASS_TABLE)
+
+    def get_class_name_inside_table(self):
+        return self.se.find_with_wait(CLASS_INSIDE_TABLE).text()
+
+    def get_confirm_field(self):
+        return self.se.find_with_wait(CONFIRM_FIELD)
+
+    def get_checkmark(self):
+        return self.se.find_with_wait(CLASS_CHECKBOX)
+
+    def get_delete(self):
+        return self.se.find_with_wait(CLASS_DELETE)
+
+    def get_bulk_action(self):
+        return self.se.find_with_wait(BULK_ACTION)
 
     def type_class_name(self):
         self.get_class_name().write(CLASS_NAME)
+
+    def type_confirm(self):
+        self.get_confirm_field().write(CONFIRM)
 
     def click_create_class_button(self):
         self.get_create_class_button().click()
@@ -86,4 +104,17 @@ class ClassMenu(BasePage):
 
     def click_no_thanks(self):
         self.get_no_thanks().click()
+
+    def click_checkmark(self):
+        self.get_checkmark().click()
+
+    def click_bulk_action(self):
+        self.get_bulk_action().click()
+
+    def click_delete(self):
+        self.get_delete().click()
+
+    def send_enter(self):
+        self.get_confirm_field().write(Keys.ENTER)
+
 

@@ -13,5 +13,10 @@ GRADE = '[name=\'grade\']'
 PERIOD = '[name=\'period\']'
 CREATE_CLASS_ON_MODAL = '[class=\'js-submit btn btn-a\']'
 NICE_WORK = '[class=\'text-3xl\']'
-NO_THANKS = '[class=\'flex justify-between pt-4 mt-8 border-t\']>[class*=\'btn btn-gray-i js-cancel\']'
-CLASS_TABLE = '[class=\'relative table w-full mt-1 table--striped table--clickable\']'
+NO_THANKS = "[class='flex justify-between pt-4 mt-8 border-t']>[class*='btn btn-gray-i js-cancel']"
+CLASS_TABLE = '[data-tour=\'first-class-row\']'
+CLASS_INSIDE_TABLE = '[data-tour=\'first-class-row\']>tbody>[class*=\'whitespace-no-wrap row-click tr group is-clickable\']>[class*=\'h-16 td\']>[class*=\'flex items-center\']>[class*=\'max-w-xs truncate whitespace-no-wrap font-display\']'
+CLASS_CHECKBOX = '[data-tour=\'first-class-row\']>[class=\'table-checkbox js-has-check td\']>[type=\'checkbox\']'
+BULK_ACTION = "[class='flex items-center justify-between']>[class='flex items-end ml-4 space-x-3 group']"
+CLASS_DELETE = '[class=\'flex items-center justify-between\']>[class=\'flex items-end ml-4 space-x-3 group\']>[class=\'relative inline-flex items-center h-8+2 text-sm text-gray-600 border border-gray-200 rounded cursor-pointer hover:text-primary-500 hover:bg-primary-50 hover:border-primary-300 btn group js-bulk-actions\']>ul>[data-id=\'delete\']'
+CONFIRM_FIELD= "#form-ele-confirm_text"
