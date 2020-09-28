@@ -20,7 +20,7 @@ class ClassMenu(BasePage):
 
     def isLoaded(self):
         try:
-            assert self.se.find(CREATE_A_NEW_CLASS, wait=True).is_displayed()
+            assert self.se.find_with_wait(CREATE_A_NEW_CLASS).is_displayed()
         except wrapping_exceptions():
             raise Error("Page is not loaded properly")
 
@@ -52,7 +52,7 @@ class ClassMenu(BasePage):
         return self.se.find_with_wait(CREATE_CLASS_ON_MODAL)
 
     def get_nice_work_text(self):
-        return self.se.find_with_wait(NICE_WORK, ttl=10)
+        return self.se.find_with_wait(NICE_WORK)
 
     def get_no_thanks(self):
         return self.se.find_with_wait(NO_THANKS)
@@ -74,6 +74,9 @@ class ClassMenu(BasePage):
 
     def get_bulk_action(self):
         return self.se.find_with_wait(BULK_ACTION)
+
+    def get_ok(self):
+        return self.se.find_with_wait(OK)
 
     def type_class_name(self):
         self.get_class_name().write(CLASS_NAME)
@@ -102,8 +105,11 @@ class ClassMenu(BasePage):
     def click_create_class_on_modal(self):
         self.get_create_class_on_modal().click()
 
+    def get_modal(self):
+        return self.se.find_with_wait(LOADING_WRAPPER, ttl=20)
+
     def click_no_thanks(self):
-        self.get_no_thanks().click()
+        self.get_no_thanks().click(ttl=10)
 
     def click_checkmark(self):
         self.get_checkmark().click()
@@ -114,7 +120,8 @@ class ClassMenu(BasePage):
     def click_delete(self):
         self.get_delete().click()
 
-    def send_enter(self):
-        self.get_confirm_field().write(Keys.ENTER)
+    def click_ok(self):
+        self.get_ok().click()
+
 
 
