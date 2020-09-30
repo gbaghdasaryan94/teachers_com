@@ -1,16 +1,14 @@
 import os
-import unittest
+import pytest
 from base.driver import Driver
 
 
-class BaseTest(unittest.TestCase):
+class BaseTest():
     driver = None
 
-    @classmethod
-    def setUpClass(cls):
+    def setup_class(cls):
         cls.driver = Driver.create(os.environ["BROWSER"])
 
-    @classmethod
-    def tearDownClass(cls):
+    def teardown_class(cls):
         cls.driver.close()
 

@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 
 from base.base_page import BasePage
 from constants.locators.class_page_locators import *
+from constants.locators.add_student_locators import *
 from utils.helper import *
 from constants.general_constants import *
 
@@ -69,23 +70,23 @@ class ClassMenu(BasePage):
     def get_checkmark(self):
         return self.se.find_with_wait(CLASS_CHECKBOX)
 
-    def get_delete(self):
-        return self.se.find_with_wait(CLASS_DELETE)
-
     def get_bulk_action(self):
         return self.se.find_with_wait(BULK_ACTION)
 
+    def get_delete(self):
+        return self.se.find_with_wait(CLASS_DELETE)
+
     def get_ok(self):
         return self.se.find_with_wait(OK)
+
+    def click_create_class_button(self):
+        self.get_create_class_button().click()
 
     def type_class_name(self):
         self.get_class_name().write(CLASS_NAME)
 
     def type_confirm(self):
         self.get_confirm_field().write(CONFIRM)
-
-    def click_create_class_button(self):
-        self.get_create_class_button().click()
 
     def type_grade(self):
         self.get_grade().write(GRADE_VALUE)
@@ -105,11 +106,8 @@ class ClassMenu(BasePage):
     def click_create_class_on_modal(self):
         self.get_create_class_on_modal().click()
 
-    def get_modal(self):
-        return self.se.find_with_wait(LOADING_WRAPPER, ttl=20)
-
     def click_no_thanks(self):
-        self.get_no_thanks().click(ttl=10)
+        self.get_no_thanks().click()
 
     def click_checkmark(self):
         self.get_checkmark().click()
@@ -123,5 +121,70 @@ class ClassMenu(BasePage):
     def click_ok(self):
         self.get_ok().click()
 
+# Below functions are for Create Class -> with Add student flow
+
+    def get_add_student(self):
+        return self.se.find_with_wait(ADD_STUDENT)
+
+    def click_add_student(self):
+        self.get_add_student().click()
+
+    def get_add_student_title(self):
+        return self.se.find_with_wait(ADD_STUDENT_TITLE)
+
+    def get_add_single_student(self):
+        return self.se.find_with_wait(ADD_A_SINGLE_STUDENT)
+
+    def click_add_single_student(self):
+        self.get_add_single_student().click()
+
+    def get_student_details(self):
+        return self.se.find_with_wait(STUDENT_DETAILS)
+
+    def get_username(self):
+        return self.se.find_with_wait(USERNAME)
+
+    def get_student_password(self):
+        return self.se.find_with_wait(STUDENT_PASSWORD)
+
+    def get_first_name(self):
+        return self.se.find_with_wait(FIRST_NAME)
+
+    def get_last_name(self):
+        return self.se.find_with_wait(LAST_NAME)
+
+    def get_create_student(self):
+        return self.se.find_with_wait(CREATE_STUDENT_ON_MODAL)
+
+    def type_username(self, username):
+        self.get_username().write(username)
+
+    def send_tab(self):
+        self.get_username().write(Keys.TAB)
+
+    def type_student_password(self):
+        self.get_student_password().write(ST_PASSWORD)
+
+    def type_first_name(self):
+        self.get_first_name().write(STUDENT_FNAME)
+
+    def type_last_name(self):
+        self.get_last_name().write(STUDENT_LNAME)
+
+    def click_create_student(self):
+        self.get_create_student().click()
 
 
+# Below is Error modal buttons functions
+
+    def get_error_modal(self):
+        return self.se.find_with_wait(ERROR_WINDOW)
+
+    def get_error_text(self):
+        return self.se.find_with_wait(ERROR_TEXT).text()
+
+    def get_ok_on_error(self):
+        return self.se.find_with_wait(OK_ON_ERROR)
+
+    def click_ok_on_modal(self):
+        self.get_ok_on_error().click()

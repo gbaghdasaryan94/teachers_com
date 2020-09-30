@@ -1,8 +1,6 @@
 import pytest
 from selenium import webdriver
 from elementium.drivers.se import SeElements
-import time
-
 
 from base.base_page import BasePage
 from constants.locators.login_locators import *

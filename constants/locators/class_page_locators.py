@@ -12,7 +12,6 @@ CLASS_NAME_FIELD = '[name=\'name\']'
 GRADE = '[name=\'grade\']'
 PERIOD = '[name=\'period\']'
 CREATE_CLASS_ON_MODAL = '[class=\'js-submit btn btn-a\']'
-LOADING_WRAPPER = "[data-el='loading-wrapper']"
 NICE_WORK = '[class=\'text-3xl\']'
 NO_THANKS = "[data-el='loading-wrapper'] button[class*='btn btn-gray-i js-cancel']"
 ADD_STUDENT = "[data-el='loading-wrapper'] button[class*='inline-flex items-center js-add-students btn btn-a']"
@@ -23,3 +22,6 @@ BULK_ACTION = "[class='flex items-center justify-between']>[class='flex items-en
 CLASS_DELETE = '[class=\'flex items-center justify-between\']>[class=\'flex items-end ml-4 space-x-3 group\']>[class=\'relative inline-flex items-center h-8+2 text-sm text-gray-600 border border-gray-200 rounded cursor-pointer hover:text-primary-500 hover:bg-primary-50 hover:border-primary-300 btn group js-bulk-actions\']>ul>[data-id=\'delete\']'
 CONFIRM_FIELD= "#form-ele-confirm_text"
 OK = "[data-el=modal]>[class='w-modal max-w-screen-sm'] button[class*='submit']"
+ERROR_WINDOW = "div[class='w-full py-6 bg-white rounded shadow-xl']"
+ERROR_TEXT = "div[class='w-full py-6 bg-white rounded shadow-xl'] div[class='px-6 py-4 js-content overflow-y-overlay max-h-alert ']"
+OK_ON_ERROR ="div[class='w-full py-6 bg-white rounded shadow-xl'] button[class='js-ok btn btn-a']"

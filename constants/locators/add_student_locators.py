@@ -1,0 +1,10 @@
+ADD_STUDENT_TITLE = "div[class='flex items-center justify-between pb-4 border-b border-gray-100 '] div[class='flex items-center text-gray-800 ']"
+ADD_A_SINGLE_STUDENT = "div[class='grid grid-cols-1 gap-4 mt-4 xs:grid-cols-2 sm:grid-cols-4'] div[data-id='addSingle']"
+STUDENT_DETAILS = "form[class='js-add-content'] [class='mt-8']"
+USERNAME = "[id='form-ele-username']"
+STUDENT_PASSWORD = "[id='form-ele-password']"
+FIRST_NAME = "[id='form-ele-first_name']"
+LAST_NAME = "[id='form-ele-last_name']"
+# EMAIL = "[id='form-ele-email']"
+CREATE_STUDENT_ON_MODAL = "div[class='flex justify-between pt-4 mt-4 border-t border-gray-100 '] button[class='js-submit btn btn-a']"
+
