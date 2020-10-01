@@ -62,7 +62,10 @@ class ClassMenu(BasePage):
         return self.se.find_with_wait(CLASS_TABLE)
 
     def get_class_name_inside_table(self):
-        return self.se.find_with_wait(CLASS_INSIDE_TABLE).text()
+        return self.se.find_with_wait(CLASS_NAME_INSIDE_TABLE)
+
+    def get_student_count(self):
+        return self.se.find_with_wait(STUDENT_COUNT)
 
     def get_confirm_field(self):
         return self.se.find_with_wait(CONFIRM_FIELD)

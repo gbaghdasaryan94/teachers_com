@@ -9,7 +9,7 @@ import subprocess
 # have choices to tell about options
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--env', type=str, default='new', help='Input environment', choices=['new', 'live'])
-parser.add_argument('--browser', type=str, default='firefox', help='Input browser', choices=['firefox', 'chrome'])
+parser.add_argument('--browser', type=str, default='chrome', help='Input browser', choices=['firefox', 'chrome'])
 parser.add_argument('--page', type=str, default='', help='Input page', choices=['login', 'class', 'add_student'])
 parser.add_argument('--group', type=str, default='', help='Input page', choices=['smoke'])
 parser.add_argument('--case', type=str, default='', help='Input page')
