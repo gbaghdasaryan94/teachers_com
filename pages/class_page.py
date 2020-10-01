@@ -17,11 +17,11 @@ class ClassMenu(BasePage):
         self.se.navigate(get_correct_url(os.environ["ENV"], 'teacher/classes'))
 
     def load(self):
-        self.se.find(CREATE_A_NEW_CLASS, wait=True)
+        self.se.find_with_wait(CLASS_PAGE_TITLE)
 
     def isLoaded(self):
         try:
-            assert self.se.find_with_wait(CREATE_A_NEW_CLASS).is_displayed()
+            assert self.se.find_with_wait(CLASS_PAGE_TITLE).is_displayed()
         except wrapping_exceptions():
             raise Error("Page is not loaded properly")
 

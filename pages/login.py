@@ -18,34 +18,34 @@ class Login(BasePage):
         self.se.navigate(get_correct_url(os.environ["ENV"], 'teacher/login'))
 
     def load(self):
-        self.se.find(NEXT_BUTTON, wait=True)
+        self.se.find_with_wait(NEXT_BUTTON)
 
     def isLoaded(self):
         try:
-            assert self.se.find(NEXT_BUTTON, wait=True).is_displayed()
+            assert self.se.find_with_wait(NEXT_BUTTON).is_displayed()
         except wrapping_exceptions():
             raise Error("Page is not loaded properly")
 
     def get_next_button(self):
-        return self.se.find(NEXT_BUTTON, wait=True)
+        return self.se.find_with_wait(NEXT_BUTTON)
 
     def get_email_field(self):
-        return self.se.find(EMAIL_FIELD, wait=True)
+        return self.se.find_with_wait(EMAIL_FIELD)
 
     def type_email(self):
         self.get_email_field().write(EMAIL)
 
     def get_password_field(self):
-        return self.se.find(PASSWORD_FIELD, wait=True)
+        return self.se.find_with_wait(PASSWORD_FIELD)
 
     def get_welcome_text(self):
-        return self.se.find(WELCOME_TEXT, wait=True)
+        return self.se.find_with_wait(WELCOME_TEXT)
 
     def type_password(self):
         self.get_password_field().write(PASSWORD)
 
     def get_login_button(self):
-        return self.se.find(LOGIN_BUTTON, wait=True, ttl=3600)
+        return self.se.find_with_wait(LOGIN_BUTTON)
 
     def click_next_button(self):
         self.get_next_button().click()

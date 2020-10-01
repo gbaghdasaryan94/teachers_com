@@ -1,5 +1,6 @@
 CREATE_A_NEW_CLASS = "[class='flex justify-center mt-4']>[class*='inline-flex items-center btn btn-a js-add']"
 ADD_CLASS_WINDOW = "[class='w-modal max-w-screen-sm']"
+CLASS_PAGE_TITLE = "div[class='flex items-start justify-between'] h1[class='font-normal leading-tight text-gray-900 ']"
 
 # Below are Add class modal locators
 CURRICULUM = '[name=\'product_id\']'
