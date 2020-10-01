@@ -16,17 +16,7 @@ class TestClassPage(BaseTest):
         cls.loginpage.make_login()
         cls.classpage = ClassMenu(cls.driver).get()
 
-    def test_a_create_class(self):
-        assert self.classpage.get_create_class_button().is_displayed(), "'Create a new class' is not displayed"
-        self.classpage.click_create_class_button()
-        assert self.classpage.get_add_class_window().is_displayed(), "'Add a class' windows is not displayed"
-        self.classpage.type_class_name()
-        self.classpage.type_grade()
-        self.classpage.type_period()
-        self.classpage.select_curriculum()
-        self.classpage.select_language()
-        self.classpage.select_status()
-        self.classpage.click_create_class_on_modal()
+    def test_a_no_thanks(self, create_class):
         assert self.classpage.get_nice_work_text().is_displayed(), "Text is not displayed"
         assert self.classpage.get_no_thanks().is_displayed(), "'No Thanks' button is not displayed"
         self.classpage.click_no_thanks()

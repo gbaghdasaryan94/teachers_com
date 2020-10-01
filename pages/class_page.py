@@ -65,7 +65,7 @@ class ClassMenu(BasePage):
         return self.se.find_with_wait(CLASS_NAME_INSIDE_TABLE)
 
     def get_student_count(self):
-        return self.se.find_with_wait(STUDENT_COUNT)
+        return self.se.find_with_wait(STUDENT_COUNT).until(lambda e: e.text() is not "0", ttl=30)
 
     def get_confirm_field(self):
         return self.se.find_with_wait(CONFIRM_FIELD)
@@ -124,7 +124,7 @@ class ClassMenu(BasePage):
     def click_ok(self):
         self.get_ok().click()
 
-# Below functions are for Create Class -> with Add student flow
+    # Below functions are for Create Class -> with Add student flow
 
     def get_add_student(self):
         return self.se.find_with_wait(ADD_STUDENT)
@@ -177,8 +177,7 @@ class ClassMenu(BasePage):
     def click_create_student(self):
         self.get_create_student().click()
 
-
-# Below is Error modal buttons functions
+    # Below is Error modal buttons functions
 
     def get_error_modal(self):
         return self.se.find_with_wait(ERROR_WINDOW)
