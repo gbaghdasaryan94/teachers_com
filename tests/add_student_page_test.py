@@ -21,17 +21,6 @@ class TestAddStudent(BaseTest):
 
     # TestClassPage.create_class
     def test_a_create_single_student(self, create_class):
-        # assert self.classpage.get_create_class_button().is_displayed(), "'Create a new class' is not displayed"
-        # self.classpage.click_create_class_button()
-        # assert self.classpage.get_add_class_window().is_displayed(), "'Add a class' windows is not displayed"
-        # self.classpage.type_class_name()
-        # self.classpage.type_grade()
-        # self.classpage.type_period()
-        # self.classpage.select_curriculum()
-        # self.classpage.select_language()
-        # self.classpage.select_status()
-        # self.classpage.click_create_class_on_modal()
-        # assert self.classpage.get_nice_work_text().is_displayed(), "Text is not displayed"
         assert self.classpage.get_add_student().is_displayed(), "Add Student button is not displayed"
         self.classpage.click_add_student()
         assert self.classpage.get_add_student_title().is_displayed(), "Add Student title is not displayed"

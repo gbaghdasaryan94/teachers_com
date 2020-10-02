@@ -16,7 +16,7 @@ class TestClassPage(BaseTest):
         cls.loginpage.make_login()
         cls.classpage = ClassMenu(cls.driver).get()
 
-    def test_a_no_thanks(self, create_class):
+    def test_a_select_no_thanks(self, create_class):
         assert self.classpage.get_nice_work_text().is_displayed(), "Text is not displayed"
         assert self.classpage.get_no_thanks().is_displayed(), "'No Thanks' button is not displayed"
         self.classpage.click_no_thanks()
