@@ -65,7 +65,7 @@ class ClassMenu(BasePage):
         return self.se.find_with_wait(CLASS_NAME_INSIDE_TABLE)
 
     def get_student_count(self):
-        return self.se.find_with_wait(STUDENT_COUNT).until(lambda e: e.text() is not "0", ttl=30)
+        return self.se.find_with_wait(STUDENT_COUNT).until(lambda e: e.text() is not "0", ttl=10)
 
     def get_confirm_field(self):
         return self.se.find_with_wait(CONFIRM_FIELD)

@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from base.base_test import BaseTest
@@ -16,6 +18,7 @@ class TestClassPage(BaseTest):
         cls.loginpage.make_login()
         cls.classpage = ClassMenu(cls.driver).get()
 
+    @pytest.mark.demo
     def test_a_select_no_thanks(self, create_class):
         assert self.classpage.get_nice_work_text().is_displayed(), "Text is not displayed"
         assert self.classpage.get_no_thanks().is_displayed(), "'No Thanks' button is not displayed"
@@ -26,6 +29,7 @@ class TestClassPage(BaseTest):
         actual_count = self.classpage.get_student_count().text()
         assert "0" == actual_count, f"Count should be 0, but actual is {actual_count}"
 
+    @pytest.mark.demo
     def test_b_delete_class(self):
         assert self.classpage.get_checkmark().is_displayed(), "Checkmark is not displayed"
         self.classpage.click_checkmark()

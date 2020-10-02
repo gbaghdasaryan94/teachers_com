@@ -19,7 +19,7 @@ class TestAddStudent(BaseTest):
         cls.loginpage.make_login()
         cls.classpage = ClassMenu(cls.driver).get()
 
-    # TestClassPage.create_class
+    @pytest.mark.demo
     def test_a_create_single_student(self, create_class):
         assert self.classpage.get_add_student().is_displayed(), "Add Student button is not displayed"
         self.classpage.click_add_student()
@@ -44,6 +44,7 @@ class TestAddStudent(BaseTest):
         assert self.classpage.get_student_count().is_displayed(), "Test test test"
         assert "1" == std_count, f"Student Count should be 1, but actual is {std_count}"
 
+    @pytest.mark.demo
     def test_b_delete_class_containing_students(self):
         assert self.classpage.get_checkmark().is_displayed(), "Checkmark is not displayed"
         self.classpage.click_checkmark()
